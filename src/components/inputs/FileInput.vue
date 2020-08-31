@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="text-wrap text-subtitle-1 mb-3">Вставить Файл</div>
+        <div class="text-wrap text-subtitle-1 mb-3">Загрузите файл</div>
         <v-text-field></v-text-field>
     </div>
 </template>

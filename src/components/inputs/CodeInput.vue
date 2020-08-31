@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="text-wrap text-subtitle-1 mb-3">Вставить code</div>
+        <div class="text-wrap text-subtitle-1 mb-3">Вставить code {{"<\/>"}} </div>
         <v-text-field></v-text-field>
     </div>
 </template>

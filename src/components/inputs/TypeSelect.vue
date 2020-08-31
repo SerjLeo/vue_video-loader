@@ -1,7 +1,15 @@
 <template>
     <div>
         <div class="text-wrap text-subtitle-1 mb-3">Выбрать источник</div>
-        <v-select append-icon="expand_more" :items="this.$data.items" outlined full-width dense v-on:change="handleChange">
+        <v-select
+            v-model="selected"
+            append-icon="expand_more"
+            :items="this.$data.items"
+            outlined
+            full-width
+            dense
+            v-on:change="handleChange"
+        >
             <template v-slot:selection="itemSlot">
                 <v-icon>{{itemSlot.item.icon}}</v-icon>
                 <div class="ml-2 text-subtitle-2">{{itemSlot.item.text}}</div>
@@ -22,6 +30,11 @@
         props: {
             type: String,
             handleChange: Function
+        },
+        computed: {
+            selected(){
+                return this.$props.type
+            }
         }
     })
     export default class TypeSelect extends Vue {
