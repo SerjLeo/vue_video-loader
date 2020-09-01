@@ -48,7 +48,7 @@
             case 'link':
                 return RegExp('^https*:\\/\\/\\w+\\.(com|ru|org|net)\\S*$', 'gm').test(this.$data.url)
             case 'iframe':
-                return RegExp('<iframe.+src="\\w+".+><\\/iframe>', 'gm').test(this.$data.url)
+                return RegExp('<iframe.+src="\\S+".+><\\/iframe>', 'gm').test(this.$data.url)
             default:
                 return true
         }
