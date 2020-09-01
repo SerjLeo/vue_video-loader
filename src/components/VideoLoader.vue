@@ -19,7 +19,7 @@
             </v-row>
             <v-row justify="center" v-if="loading">
                 <v-col cols="12" sm="8" md="6">
-                    <v-progress-circular></v-progress-circular>
+                    <v-progress-circular indeterminate></v-progress-circular>
                 </v-col>
             </v-row>
             <v-row justify="center">

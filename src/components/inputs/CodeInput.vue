@@ -3,8 +3,7 @@
         <div class="text-wrap text-subtitle-1 mb-3">Вставить code {{"<\/>"}} </div>
         <v-textarea
                 outlined
-
-                v-bind:error="!isValid && isTouched"
+                v-bind:error-messages="validation"
                 v-bind:success="isValid && isTouched"
                 v-bind:value="value"
                 v-on:input="handleInput"
@@ -29,10 +28,17 @@
             handleBlur: Function,
             isValid: Boolean,
             isTouched: Boolean
+        },
+        computed: {
+            validation() {
+                if (!this.$props.isValid && this.$props.isTouched) {
+                    return 'Code is not valid'
+                }
+                return ''
+            }
         }
     })
     export default class CodeInput extends Vue {
-
     }
 </script>
 
