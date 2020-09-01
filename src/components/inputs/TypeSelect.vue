@@ -2,7 +2,8 @@
     <div>
         <div class="text-wrap text-subtitle-1 mb-3">Выбрать источник</div>
         <v-select
-            v-model="selected"
+            color="grey"
+            v-bind:value="value"
             append-icon="expand_more"
             :items="this.$data.items"
             outlined
@@ -19,7 +20,6 @@
                 <div class="ml-2 text-subtitle-2">{{itemSlot.item.text}}</div>
             </template>
         </v-select>
-        <div>{{type}}</div>
     </div>
 </template>
 
@@ -28,13 +28,8 @@
 
     @Component({
         props: {
-            type: String,
+            value: String,
             handleChange: Function
-        },
-        computed: {
-            selected(){
-                return this.$props.type
-            }
         }
     })
     export default class TypeSelect extends Vue {
@@ -53,7 +48,7 @@
                     },
                     {
                         text: 'iFrame',
-                        value: 'code',
+                        value: 'iframe',
                         icon: 'desktop_mac'
                     }
                 ]
